@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Items for Sale</title>
+    <div th:replace="fragments :: header"/>
+</head>
+<body>
+<div th:replace="fragments :: navigation"/>
+<div class="container">
+    <div class="bg-light p-5 rounded m-3">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Item Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${items.empty}">
+                <td>0</td>
+            </tr>
+            <tr th:each="item : ${items}">
+                <th scope="row" th:text="${item.itemId}"></th>
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.description}"></td>
+                <td>
+                    <form action="#" th:action="@{/cart/__${userId}__/__${item.itemId}__}" method="post">
+                        <input class="btn btn-warning" type="submit" value="Add"/>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Success</title>
+    <div th:replace="fragments :: header"/>
+</head>
+<body>
+<div th:replace="fragments :: navigation"/>
+<div class="container">
+    <div class="bg-light p-5 rounded m-3">
+        <h1>Registration Succeeded!</h1>
+        <div class="row">
+            <div class="col-1">
+                <span>Full name:</span>
+            </div>
+            <div class="col-auto">
+                <span class="text-danger" th:text="${user.fullName}"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <span>E-mail:</span>
+            </div>
+            <div class="col-auto">
+                <span class="text-danger" th:text="${user.email}"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <span>Username:</span>
+            </div>
+            <div class="col-auto">
+                <span class="text-danger" th:text="${user.username}"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <span>Password:</span>
+            </div>
+            <div class="col-auto">
+                <span class="text-danger" th:text="${user.password}"></span>
+            </div>
+        </div>
+         <div class="col m-3">
+            <a class="btn btn-warning btn-lg" th:href="@{/login}" role="button">Login Now</a><br />
+        </div>
+    </div>
+</div>
+<div th:replace="fragments :: footer"/>
+</body>
+</html>

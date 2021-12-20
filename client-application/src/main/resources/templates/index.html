@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Welcome to Microservice Demo</title>
+    <div th:replace="fragments :: header"/>
+</head>
+<body>
+<div th:replace="fragments :: navigation"/>
+<div class="container">
+    <div class="bg-light p-5 rounded m-3">
+        <div class="row">
+            <h4>Welcome to your Spring Microservice app.</h4>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <a th:href="@{/cart}" class="btn btn-warning">Cart</a>
+            </div>
+            <div class="col-auto">
+                <a th:href="@{/items}" class="btn btn-warning">Items</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
